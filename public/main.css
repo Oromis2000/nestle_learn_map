@@ -159,6 +159,7 @@ header h2{
     -webkit-font-smoothing: antialiased;
     -webkit-transform-style: preserve-3d;
     -webkit-transform: translateZ(0); 
+    overflow: hidden;
 }
 
 .flipcard > .front,
@@ -366,7 +367,7 @@ transition-property: transform, opacity;
     .flipcard .front h2{
         font-size: 7rem;
         padding-top: 300px;
-        padding-bottom: 261px;
+        padding-bottom: 268px;
         border-radius: 30px;
     }
 
@@ -379,17 +380,17 @@ transition-property: transform, opacity;
     }
 
     #why .front h2{
-        padding-bottom: 190px !important;
+        padding-bottom: 194px !important;
         padding-top: 230px !important;
     }
 
     #agriculture .front h2{
-        padding-bottom: 190px !important;
+        padding-bottom: 194px !important;
         padding-top: 230px !important;
     }
 
     #animalproducts .front h2{
-        padding-bottom: 190px !important;
+        padding-bottom: 194px !important;
         padding-top: 230px !important;
     }
 }
@@ -417,27 +418,32 @@ transition-property: transform, opacity;
     .flipcard{
         height: 900px;
         margin-bottom: 70px;
+        overflow: hidden;
     }
 
     .flipcard .front h2{
         font-size: 48px;
         padding-top: 420px;
         padding-bottom: 420px;
+        overflow: hidden;
     }
 
     #why .front h2{
         padding-bottom: 391px !important;
-        padding-top: 390px !important;
+        padding-top: 420px !important;
+        overflow: hidden;
     }
 
     #agriculture .front h2{
         padding-bottom: 391px !important;
         padding-top: 390px !important;
+        overflow: hidden;
     }
 
     #animalproducts .front h2{
         padding-bottom: 391px !important;
         padding-top: 390px !important;
+        overflow: hidden;
     }
 
     .flipcard .back p{
