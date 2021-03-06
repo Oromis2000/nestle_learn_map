@@ -2,11 +2,20 @@
 ::before, ::after, *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     font-family: 'Nestle';
     scroll-behavior: smooth;
 }
+
+html {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+  }
 
 * {
     -webkit-backface-visibility: hidden;
@@ -417,17 +426,17 @@ transition-property: transform, opacity;
     }
 
     #why .front h2{
-        padding-bottom: 390px !important;
+        padding-bottom: 385px !important;
         padding-top: 390px !important;
     }
 
     #agriculture .front h2{
-        padding-bottom: 390px !important;
+        padding-bottom: 385px !important;
         padding-top: 390px !important;
     }
 
     #animalproducts .front h2{
-        padding-bottom: 390px !important;
+        padding-bottom: 385px !important;
         padding-top: 390px !important;
     }
 
