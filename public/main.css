@@ -420,23 +420,23 @@ transition-property: transform, opacity;
     }
 
     .flipcard .front h2{
-        font-size: 3rem;
+        font-size: 48px;
         padding-top: 420px;
         padding-bottom: 420px;
     }
 
     #why .front h2{
-        padding-bottom: 385px !important;
+        padding-bottom: 391px !important;
         padding-top: 390px !important;
     }
 
     #agriculture .front h2{
-        padding-bottom: 385px !important;
+        padding-bottom: 391px !important;
         padding-top: 390px !important;
     }
 
     #animalproducts .front h2{
-        padding-bottom: 385px !important;
+        padding-bottom: 391px !important;
         padding-top: 390px !important;
     }
 
