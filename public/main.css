@@ -101,6 +101,12 @@ header nav a:hover{
     border: var(--blue) solid 2px;
 }
 
+header h2{
+    font-family: 'NestleScript';
+    color: var(--brown);
+    text-align: center;
+}
+
 .flipcard{
     width: 100%;
     position: relative;
@@ -133,7 +139,47 @@ transition-property: transform, opacity;
     transform: rotateY(-180deg);
     background-color: var(--green);
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
-  }
+}
+
+.flipcard .front h2{
+    text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+    font-family: "NestleBrush";
+    color: white;
+    text-align: center;
+    font-weight: normal;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.flipcard .back h2{
+    text-transform: uppercase;
+    font-family: "Nestle";
+    color: white;
+    text-align: center;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+.flipcard .back p{
+    font-family: 'Nestle';
+    color: white;
+    text-align: justify;
+}
+
+.links{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.links a{
+    color: white;
+    font-family: 'NestleLight';
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
 /*FLIPING*/
 
@@ -201,6 +247,31 @@ transform: rotateY(0deg);
     background-position: center;
 }
 
+
+@media screen and (min-width: 1200px) and (max-width: 1599px){
+    .flipcard .back p{
+        margin: 50px 100px 20px 100px;
+        font-size: 1.6rem;
+    }
+
+    .flipcard .back h2{
+        font-size: 2.4rem;
+    }
+}
+
+@media screen and (min-width: 1600px){
+    .flipcard .back p{
+        margin: 90px 100px 20px 100px;
+        font-size: 1.8rem;
+    }
+
+    .flipcard .back h2{
+        font-size: 3rem;
+    }
+
+
+}
+
 /*DESKTOP*/
 @media screen and (min-width: 1200px){
     header{
@@ -211,11 +282,17 @@ transform: rotateY(0deg);
         font-size: 2.5rem;
     }
 
+    header h2{
+        font-size: 5rem;
+        margin-top: 50px;
+    }
+
     main{
         width: 80%;
-        margin-top: 100px;
+        margin-top: 50px;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 80px;
         display: grid;
         grid-template-columns: 100%;
         grid-template-rows: 700px;
@@ -232,51 +309,32 @@ transform: rotateY(0deg);
 
     .flipcard .front h2{
         font-size: 7rem;
-        text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.7);
-        text-transform: uppercase;
-        font-family: "NestleBrush";
-        color: white;
-        text-align: center;
-        font-weight: normal;
         padding-top: 300px;
         padding-bottom: 261px;
         border-radius: 30px;
-        background-color: rgba(0,0,0,0.3);
-    }
-
-    .flipcard .back h2{
-        font-size: 3rem;
-        text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
-        text-transform: uppercase;
-        font-family: "Nestle";
-        color: white;
-        text-align: center;
-        font-weight: normal;
-    }
-
-    .flipcard .back p{
-        font-family: 'Nestle';
-        font-size: 1.8rem;
-        color: white;
-        margin: 80px 100px 20px 100px;
-        text-align: justify;
     }
 
     .links{
         margin: 0 100px 30px 100px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
     }
 
     .links a{
-        color: white;
-        font-family: 'NestleLight';
         font-size: 1.5rem;
-        text-decoration: none;
-        margin-left: 5px;
-        margin-right: 5px;
+    }
+
+    #why .front h2{
+        padding-bottom: 190px !important;
+        padding-top: 230px !important;
+    }
+
+    #agriculture .front h2{
+        padding-bottom: 190px !important;
+        padding-top: 230px !important;
+    }
+
+    #animalproducts .front h2{
+        padding-bottom: 190px !important;
+        padding-top: 230px !important;
     }
 }
 
@@ -284,15 +342,58 @@ transform: rotateY(0deg);
 @media screen and (max-width: 1199px){
     header{
         margin-top: 50px;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
     }
 
     header nav a{
         font-size: 2rem;
     }
 
+    header h2{
+        font-size: 3rem;
+        margin-top: 50px;
+    }
+
     .flipcard{
-        height: 700px;
-        margin-bottom: 50px;
+        height: 900px;
+        margin-bottom: 70px;
+    }
+
+    .flipcard .front h2{
+        font-size: 5rem;
+        padding-top: 400px;
+        padding-bottom: 400px;
+    }
+
+    #why .front h2{
+        padding-bottom: 352px !important;
+        padding-top: 350px !important;
+    }
+
+    #agriculture .front h2{
+        padding-bottom: 352px !important;
+        padding-top: 350px !important;
+    }
+
+    #animalproducts .front h2{
+        padding-bottom: 352px !important;
+        padding-top: 350px !important;
+    }
+
+    .flipcard .back p{
+        margin: 40px 50px 20px 50px;
+        font-size: 1.7rem;
+    }
+
+    .flipcard .back h2{
+        font-size: 2rem;
+    }
+
+    .links{
+        margin: 0 50px 30px 50px;
+    }
+
+    .links a{
+        font-size: 1.6rem;
     }
 }
