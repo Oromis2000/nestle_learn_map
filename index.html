@@ -464,7 +464,6 @@
         });
         toplinks.forEach(link => {
             link.addEventListener("click", event => {
-                console.log(link.hash);
                 let targetcard = document.querySelector(link.hash);
                 let links = targetcard.querySelectorAll(".back a");
                 let headers = targetcard.querySelectorAll(".back h2");
@@ -484,7 +483,13 @@
                         text.classList.remove('hidden');
                     }
                 }, 550);
-                history.replaceState(null, 'U4G', 'https://oromis2000.github.io/nestle_learn_map/');
+                setTimeout( function(){
+                    var uri = window.location.toString(); 
+                    var clean_uri = uri.substring(0, uri.indexOf("#"));
+                    window.history.replaceState({
+                        id: 'clean'
+                    }, 'U4G', clean_uri); 
+                },2000);
             });
         });
     </script>
