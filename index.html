@@ -424,10 +424,12 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => document.body.className = "");
         const cards = document.querySelectorAll('.flipcard');
+        const toplinks = document.querySelectorAll('nav a');
+        console.log(toplinks);
         cards.forEach(item => {
-            const links = item.querySelectorAll(".back a");
-            const headers = item.querySelectorAll(".back h2");
-            const text = item.querySelector(".back p");
+            let links = item.querySelectorAll(".back a");
+            let headers = item.querySelectorAll(".back h2");
+            let text = item.querySelector(".back p")
             links.forEach(link => {
                 link.classList.add('hidden');
             });
@@ -458,7 +460,31 @@
                     });
                     text.classList.remove('hidden');
                 }
-            })
+            });
+        });
+        toplinks.forEach(link => {
+            link.addEventListener("click", event => {
+                console.log(link.hash);
+                let targetcard = document.querySelector(link.hash);
+                let links = targetcard.querySelectorAll(".back a");
+                let headers = targetcard.querySelectorAll(".back h2");
+                let text = targetcard.querySelector(".back p");
+                setTimeout( function(){
+                    if(targetcard.classList.contains('flip')){
+                        
+                    }
+                    else{
+                        targetcard.classList.add('flip');
+                        links.forEach(link => {
+                            link.classList.remove('hidden');
+                        });
+                        headers.forEach(header => {
+                            header.classList.remove('hidden');
+                        });
+                        text.classList.remove('hidden');
+                    }
+                }, 550);
+            });
         });
     </script>
 </body>
