@@ -420,12 +420,6 @@ transition-property: transform, opacity;
         overflow: hidden;
     }
 
-    #general .front h2{
-        padding-bottom: 391px !important;
-        padding-top: 420px !important;
-        overflow: hidden;
-    }
-
     #agriculture .front h2{
         padding-bottom: 391px !important;
         padding-top: 390px !important;
