@@ -210,10 +210,8 @@ transition-property: transform, opacity;
     text-decoration: underline;
 }
 
-.flipcard .back p{
-    font-family: 'Nestle';
-    color: white;
-    text-align: justify;
+.flipcard .back h2:first-child{
+    margin-top: 2rem;
 }
 
 .links{
@@ -225,10 +223,21 @@ transition-property: transform, opacity;
 
 .links a{
     color: white;
-    font-family: 'NestleLight';
+    border: 2px solid white;
+    font-family: 'NestleBold';
     text-decoration: none;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin:4px;
+    padding:6px;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+    transition-delay: 0.08s;
+}
+
+.links a:hover{
+    color: var(--green);
+    background-color: white;
+    transition-duration: 0.3s;
+    transition-delay: 0.08s;
 }
 
 /*FLIPING*/
@@ -252,7 +261,7 @@ transition-property: transform, opacity;
 }
 
 /*Flipcard ID*/
-#why .front{
+#general .front{
     background-image: url('https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2020-10/healthier-kids-header.jpg?h=b8626526&itok=8ajvnzLx');
     background-size: cover;
     background-position: center;
@@ -264,7 +273,7 @@ transition-property: transform, opacity;
     background-position: center;
 }
 
-#logistics .front{
+#innovation .front{
     background-image: url('https://live.staticflickr.com/1788/41124194300_8aff3f9b33_k_d.jpg');
     background-size: cover;
     background-position: center;
@@ -302,27 +311,15 @@ transition-property: transform, opacity;
 
 
 @media screen and (min-width: 1200px) and (max-width: 1599px){
-    .flipcard .back p{
-        margin: 50px 100px 20px 100px;
-        font-size: 1.6rem;
-    }
-
     .flipcard .back h2{
         font-size: 2.4rem;
     }
 }
 
 @media screen and (min-width: 1600px){
-    .flipcard .back p{
-        margin: 90px 100px 20px 100px;
-        font-size: 1.8rem;
-    }
-
     .flipcard .back h2{
         font-size: 3rem;
     }
-
-
 }
 
 /*DESKTOP*/
@@ -423,7 +420,7 @@ transition-property: transform, opacity;
         overflow: hidden;
     }
 
-    #why .front h2{
+    #general .front h2{
         padding-bottom: 391px !important;
         padding-top: 420px !important;
         overflow: hidden;
@@ -439,11 +436,6 @@ transition-property: transform, opacity;
         padding-bottom: 391px !important;
         padding-top: 390px !important;
         overflow: hidden;
-    }
-
-    .flipcard .back p{
-        margin: 40px 20px 20px 20px;
-        font-size: 1.3rem;
     }
 
     .flipcard .back h2{
