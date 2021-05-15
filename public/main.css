@@ -126,7 +126,6 @@ header nav a{
     padding: 5px 15px;
     margin: 5px;
     text-decoration: none;
-    text-transform: capitalize;
 }
 
 header nav a:hover{
@@ -378,6 +377,11 @@ transition-property: transform, opacity;
     }
 
     #agriculture .front h2{
+        padding-bottom: 194px !important;
+        padding-top: 230px !important;
+    }
+
+    #animalproducts .front h2{
         padding-bottom: 194px !important;
         padding-top: 230px !important;
     }
