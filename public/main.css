@@ -31,7 +31,6 @@ html {
     --pink: #CA007A;
     --red: #D40037;
     --orange: #FF4D00;
-
 }
 
 body.preload *{
@@ -69,27 +68,26 @@ body{
 /*FONTS*/
 @font-face {
     font-family: NestleBrush;
-    src: url(NestleBrush-Regular.ttf);
+    src: url(NestleBrush.ttf);
+    display: swap;
 }
 
 @font-face {
     font-family: NestleScript;
-    src: url(NestleScriptOfficeEUR-Regular.ttf);
+    src: url(NestleScript.ttf);
+    display: swap;
 }
 
 @font-face {
     font-family: NestleBold;
-    src: url(NestleTextTF-BoldCnd.ttf);
+    src: url(NestleBold.ttf);
+    display: swap;
 }
 
 @font-face {
     font-family: Nestle;
-    src: url(NestleTextTF-BookCnd.ttf);
-}
-
-@font-face {
-    font-family: NestleLight;
-    src: url(NestleTextTF-LightCnd.ttf);
+    src: url(Nestle.ttf);
+    display: swap;
 }
 
 /*UNIVERSAL*/
