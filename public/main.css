@@ -198,15 +198,16 @@ transition-property: transform, opacity;
     color: white;
     text-align: center;
     font-weight: normal;
-    background-color: rgba(0,0,0,0.23);
+    background-color: rgba(0,0,0,0.3);
 }
 
 .flipcard .back h2{
     text-transform: uppercase;
-    font-family: "NestleBold";
+    font-family: "Nestle";
     color: white;
     text-align: center;
     font-weight: normal;
+    text-decoration: underline;
 }
 
 .flipcard .back h2:first-child{
@@ -223,7 +224,7 @@ transition-property: transform, opacity;
 .links a{
     color: white;
     border: 2px solid white;
-    font-family: 'Nestle';
+    font-family: 'NestleBold';
     text-decoration: none;
     margin:4px;
     padding:6px;
@@ -261,7 +262,7 @@ transition-property: transform, opacity;
 
 /*Flipcard ID*/
 #general .front{
-    background-image: url('img/general.jpg');
+    background-image: url('https://www.nestle.com/sites/default/files/styles/da_vinci_header_hero_desktop/public/2020-10/healthier-kids-header.jpg?h=b8626526&itok=8ajvnzLx');
     background-size: cover;
     background-position: center;
 }
@@ -273,13 +274,13 @@ transition-property: transform, opacity;
 }
 
 #innovation .front{
-    background-image: url('https://live.staticflickr.com/7426/8856471404_fb7e8965a6_k_d.jpg');
+    background-image: url('https://live.staticflickr.com/1788/41124194300_8aff3f9b33_k_d.jpg');
     background-size: cover;
     background-position: center;
 }
 
-#circular .front{
-    background-image: url('https://live.staticflickr.com/723/21404982155_8c3a9d3ab1_k_d.jpg');
+#packaging .front{
+    background-image: url('https://live.staticflickr.com/65535/48717379748_e98b33e029_k_d.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -308,21 +309,16 @@ transition-property: transform, opacity;
     background-position: center;
 }
 
-#business .front{
-    background-image: url('https://live.staticflickr.com/65535/49425033767_5b93c3b3c3_k_d.jpg');
-    background-size: cover;
-    background-position: center;
-}
 
 @media screen and (min-width: 1200px) and (max-width: 1599px){
     .flipcard .back h2{
-        font-size: 2.3rem;
+        font-size: 2.4rem;
     }
 }
 
 @media screen and (min-width: 1600px){
     .flipcard .back h2{
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 }
 
@@ -373,19 +369,19 @@ transition-property: transform, opacity;
     }
 
     .links{
-        margin: 0 50px 30px 50px;
+        margin: 0 100px 30px 100px;
     }
 
     .links a{
         font-size: 1.5rem;
     }
 
-    #animalproducts .front h2{
+    #agriculture .front h2{
         padding-bottom: 194px !important;
         padding-top: 230px !important;
     }
 
-    #circular .front h2{
+    #animalproducts .front h2{
         padding-bottom: 194px !important;
         padding-top: 230px !important;
     }
@@ -403,7 +399,7 @@ transition-property: transform, opacity;
     }
 
     header nav a{
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
 
     header h2{
@@ -424,13 +420,13 @@ transition-property: transform, opacity;
         overflow: hidden;
     }
 
-    #animalproducts .front h2{
+    #agriculture .front h2{
         padding-bottom: 391px !important;
         padding-top: 390px !important;
         overflow: hidden;
     }
 
-    #circular .front h2{
+    #animalproducts .front h2{
         padding-bottom: 391px !important;
         padding-top: 390px !important;
         overflow: hidden;
@@ -445,6 +441,6 @@ transition-property: transform, opacity;
     }
 
     .links a{
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
