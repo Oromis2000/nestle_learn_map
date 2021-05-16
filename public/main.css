@@ -289,7 +289,7 @@ transition-property: transform, opacity;
     background-position: center;
 }
 
-#animalproducts .front{
+#animals .front{
     background-image: url('https://live.staticflickr.com/4255/35326820730_518d1d1b04_k_d.jpg');
     background-size: cover;
     background-position: center;
@@ -383,7 +383,7 @@ transition-property: transform, opacity;
         font-size: 1.5rem;
     }
 
-    #animalproducts .front h2{
+    #animals .front h2{
         padding-bottom: 194px !important;
         padding-top: 230px !important;
     }
@@ -427,7 +427,7 @@ transition-property: transform, opacity;
         overflow: hidden;
     }
 
-    #animalproducts .front h2{
+    #animals .front h2{
         padding-bottom: 391px !important;
         padding-top: 390px !important;
         overflow: hidden;
