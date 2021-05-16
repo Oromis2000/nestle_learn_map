@@ -68,25 +68,25 @@ body{
 /*FONTS*/
 @font-face {
     font-family: NestleBrush;
-    src: url(NestleBrush.ttf);
+    src: url(NestleBrush.woff2);
     display: swap;
 }
 
 @font-face {
     font-family: NestleScript;
-    src: url(NestleScript.ttf);
+    src: url(NestleScript.woff2);
     display: swap;
 }
 
 @font-face {
     font-family: NestleBold;
-    src: url(NestleBold.ttf);
+    src: url(NestleBold.woff2);
     display: swap;
 }
 
 @font-face {
     font-family: Nestle;
-    src: url(Nestle.ttf);
+    src: url(Nestle.woff2);
     display: swap;
 }
 
