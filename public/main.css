@@ -383,11 +383,6 @@ transition-property: transform, opacity;
         font-size: 1.5rem;
     }
 
-    #animals .front h2{
-        padding-bottom: 194px !important;
-        padding-top: 230px !important;
-    }
-
     #circular .front h2{
         padding-bottom: 194px !important;
         padding-top: 230px !important;
@@ -424,12 +419,6 @@ transition-property: transform, opacity;
         font-size: 48px;
         padding-top: 420px;
         padding-bottom: 420px;
-        overflow: hidden;
-    }
-
-    #animals .front h2{
-        padding-bottom: 391px !important;
-        padding-top: 390px !important;
         overflow: hidden;
     }
 
