@@ -7,6 +7,7 @@
     <title>U4G</title>
     <link rel="shortcut icon" href="https://nestle.com/themes/custom/da_vinci_code/images/favicons/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="public/main.css">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha384-JUMjoW8OzDJw4oFpWIB2Bu/c6768ObEthBMVSiIx4ruBIEdyNSUQAjJNFqT5pnJ6" crossorigin="anonymous"></script>
 </head>
 <body class="preload">
     <header>
@@ -110,6 +111,7 @@
                     <a href="https://www.wired.co.uk/article/coffee-pods-nespresso-recycling" target="_blank">Coffee pods impact (WIRED)</a>
                     <a href="https://www.ellenmacarthurfoundation.org/circular-economy/what-is-the-circular-economy" target="_blank">What is a circular economy? (EMF)</a>
                     <a href="https://www.youtube.com/watch?v=aqeulFxqT1Y&t=1s" target="_blank">New plastics economy (EMF)</a>
+                    <a href="https://emf.thirdlight.com/link/agyt3es34kjy-k2qe8a/@/preview/1?o" target="_blank">Upstream Innovation Guide (EMF)</a>
                     <a href="https://greenerideal.com/news/environment/0703-7-amazing-recycling-facts/" target="_blank">7 amazing recycling facts (Greener Ideal)</a>
                     <a href="https://recycled-papers.co.uk/green-matters/why-use-recycled-papers/use-less-water" target="_blank">Why use recycled papers (Arjowiggins)</a>
                     <a href="https://zijudrzitelne.bezobalu.org/" target="_blank">Žij Udržitelně (Bezobalu)</a>
@@ -163,7 +165,8 @@
                 </div>
                 <h2>External sources</h2>
                 <div class="links">
-                    <a href="#" target="_blank">Link&nbsp;somewhere</a>
+                    <a href="https://www.youtube.com/watch?v=fSEtiixgRJI" target="_blank">What is Regenerative Agriculture? (Jimi Sol)</a>
+                    <a href="https://www.wri.org/insights/causes-and-effects-soil-erosion-and-how-prevent-it" target="_blank">The Causes and Effects of Soil Erosion (WRI)</a>
                 </div>
             </div>
         </div>
@@ -175,11 +178,12 @@
             <div class="back">
                 <h2>Internal sources</h2>
                 <div class="links">
-                    <a href="#" target="_blank">Link&nbsp;somewhere</a>
+                    <a href="https://www.nestlecocoaplan.com/sites/site.prod.nestlecocoaplan.com/files/2021-05/NCP_TDReport_FINAL%20APPROVED%20VERSION_%2004052021.pdf" target="_blank">Tackling Deforestation Report 2021</a>
                 </div>
                 <h2>External sources</h2>
                 <div class="links">
-                    <a href="#" target="_blank">Link&nbsp;somewhere</a>
+                    <a href="https://ourworldindata.org/what-are-drivers-deforestation" target="_blank">Drivers of deforestation (OurWorldInData)</a>
+                    <a href="https://www.wri.org/insights/we-lost-football-pitch-primary-rainforest-every-6-seconds-2019" target="_blank">Football Pitch of Rainforest is Lost Every 6 Seconds</a>
                 </div>
             </div>
         </div>
@@ -204,6 +208,11 @@
             </div>
         </div>
     </main>
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
     <script>
         document.addEventListener("DOMContentLoaded", () => document.body.className = "");
         const cards = document.querySelectorAll('.flipcard');
@@ -267,6 +276,44 @@
                     }, 'U4G', clean_uri); 
                 },2000);
             });
+        });
+    </script>
+    <script>
+        var progressPath = document.querySelector('.progress-wrap path');
+        var pathLength = progressPath.getTotalLength();
+
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+        progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+        progressPath.style.strokeDashoffset = pathLength;
+        progressPath.getBoundingClientRect();
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+
+        var updateProgress = function () {
+        var scroll = $(window).scrollTop();
+        var height = $(document).height() - $(window).height();
+        var progress = pathLength - scroll * pathLength / height;
+        progressPath.style.strokeDashoffset = progress;
+        };
+
+        updateProgress();
+
+        $(window).scroll(updateProgress);
+
+        var offset = 50;
+        var duration = 550;
+
+        jQuery(window).on('scroll', function () {
+        if (jQuery(this).scrollTop() > offset) {
+            jQuery('.progress-wrap').addClass('active-progress');
+        } else {
+            jQuery('.progress-wrap').removeClass('active-progress');
+        }
+        });
+
+        jQuery('.progress-wrap').on('click', function (event) {
+        event.preventDefault();
+        jQuery('html, body').animate({ scrollTop: 0 }, duration);
+        return false;
         });
     </script>
 </body>
