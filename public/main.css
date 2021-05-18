@@ -142,7 +142,6 @@ header h2{
 header p#intro{
     font-family: "NestleBold";
     color: var(--brown);
-    margin: 3rem;
     text-align: justify;
 }
 
@@ -438,9 +437,8 @@ transition-property: transform, opacity;
     }
 
     header p#intro{
-        font-size: 1.7rem;;
-        margin-left: 150px;
-        margin-right: 150px;
+        font-size: 1.7rem;
+        margin: 3rem 150px;
     }
 
     main{
@@ -509,6 +507,7 @@ transition-property: transform, opacity;
 
     header p#intro{
         font-size: 1.3rem;;
+        margin: 2rem 1rem;
     }
 
     .flipcard{
