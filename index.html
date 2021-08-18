@@ -286,10 +286,10 @@
             });
         });
     </script>
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha384-JUMjoW8OzDJw4oFpWIB2Bu/c6768ObEthBMVSiIx4ruBIEdyNSUQAjJNFqT5pnJ6" crossorigin="anonymous"></script>
     <script>
-        var progressPath = document.querySelector('.progress-wrap path');
-        var pathLength = progressPath.getTotalLength();
+        const progressPath = document.querySelector('.progress-wrap path');
+        const pathLength = progressPath.getTotalLength();
+        const wrapper = document.querySelector('.progress-wrap');
 
         progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
         progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
@@ -297,31 +297,36 @@
         progressPath.getBoundingClientRect();
         progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
 
-        var updateProgress = function () {
-        var scroll = $(window).scrollTop();
-        var height = $(document).height() - $(window).height();
-        var progress = pathLength - scroll * pathLength / height;
-        progressPath.style.strokeDashoffset = progress;
+        function updateProgress() {
+            var scroll = window.scrollY;
+            var height = document.body.clientHeight + document.querySelector('header').offsetTop + 80 - window.innerHeight;
+            var progress = pathLength - (scroll * pathLength / height);
+            progressPath.style.strokeDashoffset = progress;
         };
 
         updateProgress();
 
-        $(window).scroll(updateProgress);
+        window.addEventListener('scroll', () => {
+            updateProgress();
+        });
 
         var offset = 50;
         var duration = 550;
 
-        jQuery(window).on('scroll', function () {
-        if (jQuery(this).scrollTop() > offset) {
-            jQuery('.progress-wrap').addClass('active-progress');
+        window.addEventListener('scroll', function () {
+        if (window.scrollY > offset) {
+            document.querySelector('.progress-wrap').classList.add('active-progress');
         } else {
-            jQuery('.progress-wrap').removeClass('active-progress');
+            document.querySelector('.progress-wrap').classList.remove('active-progress');
         }
         });
 
-        jQuery('.progress-wrap').on('click', function (event) {
+        document.querySelector('.progress-wrap').addEventListener('click', event => {
         event.preventDefault();
-        jQuery('html, body').animate({ scrollTop: 0 }, duration);
+        window.scroll({
+            top: 0,
+            behavior: 'smooth'
+        });
         return false;
         });
     </script>
