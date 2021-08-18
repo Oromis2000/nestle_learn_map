@@ -221,6 +221,7 @@
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
     </div>
+    <script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => document.body.className = "");
         const cards = document.querySelectorAll('.flipcard');
@@ -259,7 +260,9 @@
         });
         toplinks.forEach(link => {
             link.addEventListener("click", event => {
+                event.preventDefault;
                 let targetcard = document.querySelector(link.hash);
+                targetcard.scrollIntoView({ behavior: 'smooth' });
                 let links = targetcard.querySelectorAll(".back a");
                 let headers = targetcard.querySelectorAll(".back h2");
                 setTimeout( function(){
@@ -286,7 +289,6 @@
             });
         });
     </script>
-    <script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
     <script>
         const progressPath = document.querySelector('.progress-wrap path');
         const pathLength = progressPath.getTotalLength();
