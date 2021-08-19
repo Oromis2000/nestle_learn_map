@@ -226,6 +226,23 @@
         document.addEventListener("DOMContentLoaded", () => document.body.className = "");
         const cards = document.querySelectorAll('.flipcard');
         const toplinks = document.querySelectorAll('nav a');
+        document.querySelector('.progress-wrap').addEventListener('click', () =>{
+            cards.forEach(item => {
+                let links = item.querySelectorAll(".back a");
+                let headers = item.querySelectorAll(".back h2");
+                if(item.classList.contains('flip')){
+                    item.classList.remove('flip');
+                    setTimeout( function(){
+                        links.forEach(link => {
+                            link.classList.add('hidden');
+                        });
+                        headers.forEach(header => {
+                            header.classList.add('hidden');
+                        });
+                    }, 300);
+                }
+            });
+        });
         cards.forEach(item => {
             let links = item.querySelectorAll(".back a");
             let headers = item.querySelectorAll(".back h2");
