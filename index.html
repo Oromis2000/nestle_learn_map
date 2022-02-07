@@ -1,375 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>U4G</title>
-    <link rel="shortcut icon" href="public/img/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="public/main.css">
-    <link rel="preload" href="public/Nestle.woff2" as="font" type="font/woff2" crossorigin=“anonymous”>
-    <link rel="preload" href="public/NestleBold.woff2" as="font" type="font/woff2" crossorigin=“anonymous”>
-    <link rel="preload" href="public/NestleBrush.woff2" as="font" type="font/woff2" crossorigin=“anonymous”>
-    <link rel="preload" href="public/NestleScript.woff2" as="font" type="font/woff2" crossorigin=“anonymous”>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U4G - Sustainability education website</title>
+    <link
+      rel="shortcut icon"
+      href="public/img/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="public/main.css" />
+    <link
+      rel="preload"
+      href="public/Nestle.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="“anonymous”"
+    />
+    <link
+      rel="preload"
+      href="public/NestleBold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="“anonymous”"
+    />
+    <link
+      rel="preload"
+      href="public/NestleBrush.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="“anonymous”"
+    />
+    <link
+      rel="preload"
+      href="public/NestleScript.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="“anonymous”"
+    />
     <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-        j.async=true;
-        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-WCNFTH');
-    </script>
+    <!--<script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WCNFTH");
+    </script>-->
     <!-- End Google Tag Manager -->
-</head>
-<body class="preload">
+  </head>
+  <body class="preload">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCNFTH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!--<noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WCNFTH"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>-->
     <!-- End Google Tag Manager (noscript) -->
-    <header>
-        <img src="public/img/U4G.webp" alt="U4Green logo">
+
+    <div id="app">
+      <header>
+        <img src="public/img/U4G.webp" alt="U4Green logo" />
         <nav>
-            <a href="#general">#general</a>
-            <a href="#energy">#energy</a>
-            <a href="#technology">#technology</a>
-            <a href="#circular">#circular-economy</a>
-            <a href="#foodwaste">#food-waste</a>
-            <a href="#animals">#animals</a>
-            <a href="#agriculture">#agriculture</a>
-            <a href="#deforestation">#deforestation</a>
-            <a href="#business">#business</a>
+          <a href="#general">#general</a>
+          <a href="#energy">#energy</a>
+          <a href="#technology">#technology</a>
+          <a href="#circular">#circular-economy</a>
+          <a href="#foodwaste">#food-waste</a>
+          <a href="#animals">#animals</a>
+          <a href="#agriculture">#agriculture</a>
+          <a href="#deforestation">#deforestation</a>
+          <a href="#business">#business</a>
         </nav>
-        <p id="intro">This site was created to act as a hub of information about sustainability as a part of CZ&SK U4Green initiative. Here you can find relevant sources for pretty much any topic concerning sustainability (with a bit of bias towards Nestlé centered topics). If you feel like something is missing or you have a source you would like to share with others you can contact us using <a href="https://forms.office.com/r/CXxe9Z5732">this form</a>.</p>
+        <p id="intro">
+          This site was created to act as a hub of information about
+          sustainability as a part of CZ&SK U4Green initiative. Here you can
+          find relevant sources for pretty much any topic concerning
+          sustainability (with a bit of bias towards Nestlé centered topics). If
+          you feel like something is missing or you have a source you would like
+          to share with others you can contact us using
+          <a href="https://forms.office.com/r/CXxe9Z5732">this form</a>.
+        </p>
         <h2>Click on a card to learn more!</h2>
-    </header>
-    <main>
-        <div class="flipcard" id="general">
-            <div class="front">
-                <h2>#general</h2>
+      </header>
+      <main v-cloak>
+        <div class="flipcard" v-for="(card, index) in content" :id="card.id">
+          <div class="front">
+            <h2 v-html="card.name"></h2>
+          </div>
+          <div class="back">
+            <h2 v-if="card.internal != ''">Internal sources</h2>
+            <div class="links">
+              <a
+                v-for="(item) in card.internalShort"
+                :href="item.url"
+                target="_blank"
+                >{{item.text}}</a
+              >
             </div>
-            <div class="back">
-                <h2>Internal sources</h2>
-                <div class="links">
-                    <a href="https://www.nestle.com/sites/default/files/2020-12/nestle-net-zero-roadmap-en.pdf" target="_blank">Nestlé Net Zero Roadmap</a>
-                </div>
-                <h2>External sources</h2>
-                <div class="links">
-                    <a href="https://www.youtube.com/playlist?list=PLXT_ozykGVam5GxAFZFusKqR_0zkEoBif" target="_blank">Summit 21 (EMF)</a>
-                    <a href="https://www.unep.org/interactive/emissions-gap-report/2020/" target="_blank">Emissions Gap Report 2020 (UNEP)</a>
-                    <a href="https://www.hra-o-zemi.cz/" target="_blank">Vaše ekologická stopa (GreenCircle)</a>
-                    <a href="https://www.youtube.com/watch?v=ipVxxxqwBQw" target="_blank">Who Is Responsible? (Kurzgesagt)</a>
-                    <a href="https://www.wri.org/insights/interactive-chart-shows-changes-worlds-top-10-emitters" target="_blank">World's Top 10 Emitters (WRI)</a>
-                    <a href="https://www.youtube.com/watch?v=wbR-5mHI6bo" target="_blank">Is It Too Late? (Kurzgesagt)</a>
-                    <a href="https://www.wri.org/insights/what-does-net-zero-emissions-mean-6-common-questions-answered" target="_blank">What Does Net-Zero Mean? (WRI)</a>
-                    <a href="https://ourworldindata.org/grapher/annual-co2-emissions-per-country?tab=chart&country=~OWID_WRL&region=World" target="_blank">Annual CO₂ emissions (OurWorldInData)</a>
-                    <a href="https://carbonpricingdashboard.worldbank.org/map_data" target="_blank">Average temperature (OurWorldInData)</a>
-                    <a href="https://ourworldindata.org/grapher/temperature-anomaly?time=earliest..latest" target="_blank">Carbon pricing (OurWorldInData)</a>
-                    <a href="https://ourworldindata.org/atmospheric-concentrations" target="_blank">Atmospheric concentrations of GHG (OurWorldInData)</a>
-                    <a href="https://carbonpricingdashboard.worldbank.org/map_data" target="_blank">Carbon pricing (TheWorldBank)</a>
-                    <a href="https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_SPM.pdf" target="_blank">Climate change summary (IPCC)</a>
-                    <a href="https://apps.who.int/iris/bitstream/handle/10665/204585/9789241565196_eng.pdf" target="_blank">Environmental health risks (WHO)</a>
-                    <a href="https://unfccc.int/sites/default/files/resource/28_EASAC%20Report%20on%20Negative%20Emission%20Technologies.pdf" target="_blank">Negative emission technologies (EASAC)</a>
-                    <a href="https://www.wri.org/insights/6-ways-remove-carbon-pollution-sky" target="_blank">6 Ways to Remove Carbon Pollution (WRI)</a>
-                </div>
+            <h2>External sources</h2>
+            <div class="links">
+              <a
+                v-for="(item) in card.externalShort"
+                :href="item.url"
+                target="_blank"
+                >{{item.text}}</a
+              >
             </div>
+            <button
+              v-if="card.external.length > 12"
+              class="more"
+              @click="more(index)"
+            >
+              See more
+            </button>
+          </div>
         </div>
-        <div class="flipcard" id="energy">
-            <div class="front">
-                <h2>#energy</h2>
-            </div>
-            <div class="back">
-                <h2>Internal sources</h2>
-                <div class="links">
-                    <a href="https://web.microsoftstream.com/video/2e76e20e-43e4-4b0a-bb70-88c75aa4b011" target="_blank">Energie a její alternativní zdroje</a>
-                </div>
-                <h2>External sources</h2>
-                <div class="links">
-                    <a href="https://ourworldindata.org/safest-sources-of-energy" target="_blank">Safest and cleanest sources (OurWorldInData)</a>
-                    <a href="https://www.ucsusa.org/resources/smart-energy-solutions-improve-energy-efficiency" target="_blank">Smart Energy Solutions (UCSUSA)</a>
-                    <a href="https://www.wri.org/insights/3-reasons-invest-renewable-energy-now" target="_blank">3 Reasons to Invest in Renewable Energy (IEA)</a>
-                    <a href="https://www.youtube.com/watch?v=EhAemz1v7dQ" target="_blank">Do we Need Nuclear Energy? (Kurzgesagt)</a>
-                    <a href="https://www.youtube.com/watch?v=Jzfpyo-q-RM" target="_blank">Energy Death Toll (Kurzgesagt)</a>
-                    <a href="https://ourworldindata.org/energy-mix" target="_blank">Global energy mix (OurWorldInData)</a>
-                    <a href="https://www.iea.org/reports/energy-efficiency-2019" target="_blank">Energy efficiency trends (IEA)</a>
-                    <a href="https://ourworldindata.org/grapher/carbon-dioxide-emissions-factor" target="_blank">Emissions per MWh (OurWorldInData)</a>
-                    <a href="https://ourworldindata.org/grapher/global-primary-energy" target="_blank">Energy consumption by source (OurWorldInData)</a>
-                </div>
-            </div>
+      </main>
+      <div id="moreOverlay" v-cloak v-if="!showMore.hidden">
+        <a href="javascript:void(0)" class="closebtn" @click="less">&times;</a>
+        <div class="overlaycontent">
+          <h2 v-html="showMore.name"></h2>
+          <h3 v-if="showMore.internal != ''">Internal sources</h3>
+          <div class="links">
+            <a
+              v-for="(item) in showMore.internal"
+              :href="item.url"
+              target="_blank"
+              >{{item.text}}</a
+            >
+          </div>
+          <h3 v-if="showMore.external != ''">External sources</h3>
+          <div class="links">
+            <a
+              v-for="(item) in showMore.external"
+              :href="item.url"
+              target="_blank"
+              >{{item.text}}</a
+            >
+          </div>
         </div>
-        <div class="flipcard" id="technology">
-            <div class="front">
-                <h2>#technology</h2>
-            </div>
-            <div class="back">
-                <h2>Internal sources</h2>
-                <div class="links">
-                    <a href="https://www.nestle.com/stories/nestle-breakthrough-coffee-breeding-low-carbon-drought-resistant-varieties" target="_blank">A breakthrough in coffee breeding</a>
-                </div>
-                <h2>External sources</h2>
-                <div class="links">
-                    <a href="https://www.iea.org/reports/global-ev-outlook-2019" target="_blank">Global EV Outlook (IEA)</a>
-                    <a href="https://www.infineon.com/cms/en/discoveries/electromobility/" target="_blank">What you need to know about electromobility (Infineon)</a>
-                    <a href="https://www.wri.org/insights/everything-you-need-know-about-fastest-growing-source-global-emissions-transport" target="_blank">Fastest-Growing Emission Source: Transport (WRI)</a>
-                    <a href="https://www.youtube.com/watch?v=C_BK7PRugK4" target="_blank">Aviation fuel problem (Real Engineering)</a>
-                    <a href="https://cc.cz/plastove-lahve-nove-generace-loreal-nestle-i-pepsi-si-je-nechaly-vyvinout-z-petu-recyklovaneho-pomoci-enzymu/" target="_blank">Plastové lahve nové generace (CzechCrunch)</a>
-                    <a href="https://blockheadtechnologies.com/how-blockchain-is-revolutionising-food-supply-chains/" target="_blank">Blockchain food supply chains (Blockhead)</a>
-                    <a href="https://www.youtube.com/watch?v=6w78-aSTIDY" target="_blank">Battery recycling (Undecided)</a>
-                    <a href="https://www.youtube.com/watch?v=ecxCL84n26g" target="_blank">Carbon Capture (Real Engineering)</a>
-                </div>
-            </div>
-        </div>
-        <div class="flipcard" id="circular">
-            <div class="front">
-                <h2>#circular<br>economy</h2>
-            </div>
-            <div class="back">
-                <h2>Internal sources</h2>
-                <div class="links">
-                    <a href="https://nlms.csod.com/ui/lms-learning-details/app/curriculum/15fa55e3-3c5d-42dc-a729-4b80e21a1c2e" target="_blank">Sustainable Packaging Fundamentals</a>
-                    <a href="https://nlms.csod.com/ui/lms-learning-details/app/material/07df04da-f817-4091-94a5-5c6b76c05c51" target="_blank">The Rules of Sustainable Packaging</a>
-                </div>
-                <h2>External sources</h2>
-                <div class="links">
-                    <a href="https://www.ellenmacarthurfoundation.org/circular-economy/what-is-the-circular-economy" target="_blank">What is a circular economy? (EMF)</a>
-                    <a href="https://www.wri.org/insights/how-build-circular-economy" target="_blank">How to Build a Circular Economy (WRI)</a>
-                    <a href="https://www.youtube.com/watch?v=aqeulFxqT1Y&t=1s" target="_blank">New plastics economy (EMF)</a>
-                    <a href="https://emf.thirdlight.com/link/agyt3es34kjy-k2qe8a/@/preview/1?o" target="_blank">Upstream Innovation Guide (EMF)</a>
-                    <a href="https://greenerideal.com/news/environment/0703-7-amazing-recycling-facts/" target="_blank">7 amazing recycling facts (Greener Ideal)</a>
-                    <a href="https://recycled-papers.co.uk/green-matters/why-use-recycled-papers/use-less-water" target="_blank">Why use recycled papers (Arjowiggins)</a>
-                    <a href="https://zijudrzitelne.bezobalu.org/" target="_blank">Žij Udržitelně (Bezobalu)</a>
-                    <a href="https://www.wired.co.uk/article/coffee-pods-nespresso-recycling" target="_blank">Coffee pods impact (WIRED)</a>
-                    <a href="https://forbes.cz/odpad-zdrojem-cirkularni-ekonomika-je-cesta-z-krize-rikaji-jeji-propagatori/" target="_blank">Cirkulární ekonomika je cesta z krize (Forbes)</a>
-                    <a href="https://www.youtube.com/watch?v=nvVafMi0l68" target="_blank">Right to repair (LMG)</a>
-                    <a href="https://www.wri.org/insights/4-ways-reduce-plastic-pollution" target="_blank">4 Ways to Reduce Plastic Pollution (WRI)</a>
-                    <a href="https://www.youtube.com/watch?v=KXRtNwUju5g" target="_blank">Broken recycling system (Wendover)</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="flipcard" id="foodwaste">
-            <div class="front">
-                <h2>#food waste</h2>
-            </div>
-            <div class="back">
-                <h2>Internal sources</h2>
-                <div class="links">
-                    <a href="http://thenest-eur-hq.nestle.com/NE/CI/Pages/2021-cool-food-pledge.aspx" target="_blank">Tackling climate change from our plates</a>
-                    <a href="https://nestle.workplace.com/groups/441519522948550/permalink/1176568986110263/" target="_blank">Food waste = Water waste</a>
-                </div>
-                <h2>External sources</h2>
-                <div class="links">
-                    <a href="https://zachranjidlo.cz/" target="_blank">Jak neplýtvat jídlem - praktické informace a recepty (ZachraňJídlo)</a>
-                    <a href="https://foodprint.org/issues/the-problem-of-food-waste/" target="_blank">Food waste - general info (FoodPrint)</a>
-                    <a href="https://www.ellenmacarthurfoundation.org/explore/food-cities-the-circular-economy" target="_blank">Food in the circular economy (EMF)</a>
-                    <a href="https://www.ellenmacarthurfoundation.org/case-studies/a-plant-based-coating-that-reduces-food-waste" target="_blank">Coating reducing food-waste (EMF)</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="flipcard" id="animals">
-            <div class="front">
-                <h2>#animals</h2>
-            </div>
-            <div class="back">
-                <h2>External sources</h2>
-                <div class="links">
-                    <a href="https://www.cbd.int/gbo/gbo5/publication/gbo-5-spm-en.pdf" target="_blank">Global Biodiversity Outlook (UN)</a>
-                    <a href="https://interactive.carbonbrief.org/what-is-the-climate-impact-of-eating-meat-and-dairy/" target="_blank">Impact of eating meat and dairy (CarbonBrief)</a>
-                    <a href="https://www.youtube.com/watch?v=NxvQPzrg2Wg" target="_blank">Meat - the Best Worst Thing (Kurzgesagt)</a>
-                    <a href="https://ourworldindata.org/food-emissions-carbon-budget" target="_blank">Food emissions (WRI)</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="flipcard" id="agriculture">
-            <div class="front">
-                <h2>#agriculture</h2>
-            </div>
-            <div class="back">
-                <h2>Internal sources</h2>
-                <div class="links">
-                    <a href="https://nlms.csod.com/ui/lms-learning-details/app/video/cef28cc2-abf3-4419-8060-a61c61e7253e">Introduction to Regenerative Agriculture</a>
-                </div>
-                <h2>External sources</h2>
-                <div class="links">
-                    <a href="https://www.youtube.com/watch?v=fSEtiixgRJI" target="_blank">What is Regenerative Agriculture? (Jimi Sol)</a>
-                    <a href="https://www.wri.org/insights/causes-and-effects-soil-erosion-and-how-prevent-it" target="_blank">The Causes and Effects of Soil Erosion (WRI)</a>
-                    <a href="https://www.wri.org/insights/how-sustainably-feed-10-billion-people-2050-21-charts" target="_blank">Sustainably Feeding 10 Billion People (WRI)</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="flipcard" id="deforestation">
-            <div class="front">
-                <h2>#deforestation</h2>
-            </div>
-            <div class="back">
-                <h2>Internal sources</h2>
-                <div class="links">
-                    <a href="https://www.nestlecocoaplan.com/sites/site.prod.nestlecocoaplan.com/files/2021-05/NCP_TDReport_FINAL%20APPROVED%20VERSION_%2004052021.pdf" target="_blank">Tackling Deforestation Report 2021</a>
-                </div>
-                <h2>External sources</h2>
-                <div class="links">
-                    <a href="https://ourworldindata.org/what-are-drivers-deforestation" target="_blank">Drivers of deforestation (OurWorldInData)</a>
-                    <a href="https://www.wri.org/insights/we-lost-football-pitch-primary-rainforest-every-6-seconds-2019" target="_blank">Football Pitch of Rainforest is Lost Every 6 Seconds</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="flipcard" id="business">
-            <div class="front">
-                <h2>#business</h2>
-            </div>
-            <div class="back">
-                <h2>Internal sources</h2>
-                <div class="links">
-                    <a href="https://www.nestle.com/stories/climate-change-action-not-philanthropy-ceo-mark-schneider-oped" target="_blank">Climate change action is not philanthropy</a>
-                    <a href="https://nlms.csod.com/ui/lms-learning-details/app/material/4b877569-0b43-4aec-82bb-b51324719547 " target="_blank">Carbon Offsetting</a>
-                    <a href="https://nlms.csod.com/ui/lms-learning-details/app/video/214d38ba-86a2-4009-ac67-db097a1b2cf5" target="_blank">Climate Sensitive Product Development</a>
-                </div>
-                <h2>External sources</h2>
-                <div class="links">
-                    <a href="https://www.ey.com/cs_cz/climate-change-sustainability-services/udrzitelnost-vs-konzumerismus-proc-se-vyplati-neco-co-neprinasi-" target="_blank">Udržitelnost vs. konzumerismus (Ernst&Young)</a>
-                    <a href="https://assets.kpmg/content/dam/kpmg/xx/pdf/2020/11/the-time-has-come.pdf" target="_blank">Survey of Sustainability Reporting (KMPG)</a>
-                    <a href="https://www.wri.org/insights/corporate-financing-nature-based-solutions-what-next" target="_blank">Corporate Financing of Nature Based Solutions (WRI)</a>
-                    <a href="https://www.bcg.com/publications/2020/quest-sustainable-business-model-innovation" target="_blank">Sustainable Business Model Innovation (BCG)</a>
-                    <a href="https://www.eea.europa.eu/publications/a-framework-for-enabling-circular/a-framework-for-enabling-circular" target="_blank">Framework for circular business models (EEA)</a>
-                </div>
-            </div>
-        </div>
-    </main>
-    <div class="progress-wrap">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
+      </div>
     </div>
+
+    <div class="progress-wrap">
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+
     <script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./app.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => document.body.className = "");
-        const cards = document.querySelectorAll('.flipcard');
-        const toplinks = document.querySelectorAll('nav a');
-        document.querySelector('.progress-wrap').addEventListener('click', () =>{
-            cards.forEach(item => {
-                let links = item.querySelectorAll(".back a");
-                let headers = item.querySelectorAll(".back h2");
-                if(item.classList.contains('flip')){
-                    item.classList.remove('flip');
-                    setTimeout( function(){
-                        links.forEach(link => {
-                            link.classList.add('hidden');
-                        });
-                        headers.forEach(header => {
-                            header.classList.add('hidden');
-                        });
-                    }, 300);
-                }
-            });
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.className = "";
+      });
+      const cards = document.querySelectorAll(".flipcard");
+      const toplinks = document.querySelectorAll("nav a");
+      document.querySelector(".progress-wrap").addEventListener("click", () => {
+        cards.forEach((item) => {
+          let links = item.querySelectorAll(".back a");
+          let headers = item.querySelectorAll(".back h2");
+          if (item.classList.contains("flip")) {
+            item.classList.remove("flip");
+            setTimeout(function () {
+              links.forEach((link) => {
+                link.classList.add("hidden");
+              });
+              headers.forEach((header) => {
+                header.classList.add("hidden");
+              });
+            }, 300);
+          }
         });
-        cards.forEach(item => {
-            let links = item.querySelectorAll(".back a");
-            let headers = item.querySelectorAll(".back h2");
-            links.forEach(link => {
-                link.classList.add('hidden');
-            });
-            headers.forEach(header => {
-                header.classList.add('hidden');
-            });
-            item.addEventListener("click", event => {
-                if(item.classList.contains('flip')){
-                    item.classList.remove('flip');
-                    setTimeout( function(){
-                        links.forEach(link => {
-                            link.classList.add('hidden');
-                        });
-                        headers.forEach(header => {
-                            header.classList.add('hidden');
-                        });
-                    }, 300);
-                }
-                else{
-                    item.classList.add('flip');
-                    links.forEach(link => {
-                        link.classList.remove('hidden');
-                    });
-                    headers.forEach(header => {
-                        header.classList.remove('hidden');
-                    });
-                }
-            });
+      });
+      cards.forEach((item) => {
+        let links = item.querySelectorAll(".back a");
+        let headers = item.querySelectorAll(".back h2");
+        links.forEach((link) => {
+          link.classList.add("hidden");
         });
-        toplinks.forEach(link => {
-            link.addEventListener("click", event => {
-                event.preventDefault;
-                let targetcard = document.querySelector(link.hash);
-                targetcard.scrollIntoView({ behavior: 'smooth' });
-                let links = targetcard.querySelectorAll(".back a");
-                let headers = targetcard.querySelectorAll(".back h2");
-                setTimeout( function(){
-                    if(targetcard.classList.contains('flip')){
-                        
-                    }
-                    else{
-                        targetcard.classList.add('flip');
-                        links.forEach(link => {
-                            link.classList.remove('hidden');
-                        });
-                        headers.forEach(header => {
-                            header.classList.remove('hidden');
-                        });
-                    }
-                }, 550);
-                setTimeout( function(){
-                    var uri = window.location.toString(); 
-                    var clean_uri = uri.substring(0, uri.indexOf("#"));
-                    window.history.replaceState({
-                        id: 'clean'
-                    }, 'U4G', clean_uri); 
-                },2000);
-            });
+        headers.forEach((header) => {
+          header.classList.add("hidden");
         });
+        item.addEventListener("click", (event) => {
+          if (
+            event.target.nodeName == "A" ||
+            event.target.nodeName == "BUTTON"
+          ) {
+          } else if (item.classList.contains("flip")) {
+            item.classList.remove("flip");
+            setTimeout(function () {
+              links.forEach((link) => {
+                link.classList.add("hidden");
+              });
+              headers.forEach((header) => {
+                header.classList.add("hidden");
+              });
+            }, 300);
+          } else {
+            item.classList.add("flip");
+            links.forEach((link) => {
+              link.classList.remove("hidden");
+            });
+            headers.forEach((header) => {
+              header.classList.remove("hidden");
+            });
+          }
+        });
+      });
+      toplinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault;
+          let targetcard = document.querySelector(link.hash);
+          targetcard.scrollIntoView({ behavior: "smooth" });
+          let links = targetcard.querySelectorAll(".back a");
+          let headers = targetcard.querySelectorAll(".back h2");
+          setTimeout(function () {
+            if (targetcard.classList.contains("flip")) {
+            } else {
+              targetcard.classList.add("flip");
+              links.forEach((link) => {
+                link.classList.remove("hidden");
+              });
+              headers.forEach((header) => {
+                header.classList.remove("hidden");
+              });
+            }
+          }, 550);
+          setTimeout(function () {
+            var uri = window.location.toString();
+            var clean_uri = uri.substring(0, uri.indexOf("#"));
+            window.history.replaceState(
+              {
+                id: "clean",
+              },
+              "U4G",
+              clean_uri
+            );
+          }, 2000);
+        });
+      });
     </script>
     <script>
-        const progressPath = document.querySelector('.progress-wrap path');
-        const pathLength = progressPath.getTotalLength();
-        const wrapper = document.querySelector('.progress-wrap');
+      const progressPath = document.querySelector(".progress-wrap path");
+      const pathLength = progressPath.getTotalLength();
+      const wrapper = document.querySelector(".progress-wrap");
 
-        progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
-        progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
-        progressPath.style.strokeDashoffset = pathLength;
-        progressPath.getBoundingClientRect();
-        progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+      progressPath.style.transition = progressPath.style.WebkitTransition =
+        "none";
+      progressPath.style.strokeDasharray = pathLength + " " + pathLength;
+      progressPath.style.strokeDashoffset = pathLength;
+      progressPath.getBoundingClientRect();
+      progressPath.style.transition = progressPath.style.WebkitTransition =
+        "stroke-dashoffset 10ms linear";
 
-        function updateProgress() {
-            var scroll = window.scrollY;
-            var height = document.body.clientHeight + document.querySelector('header').offsetTop + 80 - window.innerHeight;
-            var progress = pathLength - (scroll * pathLength / height);
-            progressPath.style.strokeDashoffset = progress;
-        };
+      function updateProgress() {
+        var scroll = window.scrollY;
+        var height =
+          document.body.clientHeight +
+          document.querySelector("header").offsetTop +
+          80 -
+          window.innerHeight;
+        var progress = pathLength - (scroll * pathLength) / height;
+        progressPath.style.strokeDashoffset = progress;
+      }
 
+      updateProgress();
+
+      window.addEventListener("scroll", () => {
         updateProgress();
+      });
 
-        window.addEventListener('scroll', () => {
-            updateProgress();
-        });
+      var offset = 50;
+      var duration = 550;
 
-        var offset = 50;
-        var duration = 550;
-
-        window.addEventListener('scroll', function () {
+      window.addEventListener("scroll", function () {
         if (window.scrollY > offset) {
-            document.querySelector('.progress-wrap').classList.add('active-progress');
+          document
+            .querySelector(".progress-wrap")
+            .classList.add("active-progress");
         } else {
-            document.querySelector('.progress-wrap').classList.remove('active-progress');
+          document
+            .querySelector(".progress-wrap")
+            .classList.remove("active-progress");
         }
-        });
+      });
 
-        document.querySelector('.progress-wrap').addEventListener('click', event => {
-        event.preventDefault();
-        window.scroll({
+      document
+        .querySelector(".progress-wrap")
+        .addEventListener("click", (event) => {
+          event.preventDefault();
+          window.scroll({
             top: 0,
-            behavior: 'smooth'
-        });
-        return false;
+            behavior: "smooth",
+          });
+          return false;
         });
     </script>
-</body>
+  </body>
 </html>

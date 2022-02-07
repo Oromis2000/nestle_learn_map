@@ -1,548 +1,645 @@
 /*RESETS AND BASICS*/
-::before, ::after, *{
-    margin: 0;
-    padding: 0;
-    font-family: 'Nestle';
-    scroll-behavior: smooth;
+::before,
+::after,
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Nestle";
+  scroll-behavior: smooth;
 }
 
 html {
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-  }
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+}
 
 * {
-    -webkit-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-:root{
-    --brown: #62513C;
-    --blue: #009FDF;
-    --teal: #00AEAA;
-    --green: #60A60E;
-    --yellow: #FFC500;
-    --purple: #6E2177;
-    --pink: #CA007A;
-    --red: #D40037;
-    --orange: #FF4D00;
+:root {
+  --brown: #62513c;
+  --blue: #009fdf;
+  --teal: #00aeaa;
+  --green: #60a60e;
+  --yellow: #ffc500;
+  --purple: #6e2177;
+  --pink: #ca007a;
+  --red: #d40037;
+  --orange: #ff4d00;
 }
 
-body.preload *{
-    animation-duration: 0s !important;
-    -webkit-animation-duration: 0s !important;
-    transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+body.preload * {
+  animation-duration: 0s !important;
+  -webkit-animation-duration: 0s !important;
+  transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s,
+    padding 0s, margin 0s !important;
 }
 
-body{
-    max-width: 100vw;
-    overflow-x: hidden;
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-    width: 7px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: darkgray; 
+  background: darkgray;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: gray; 
+  background: gray;
 }
 
-.hidden{
-    display: none !important;
+[v-cloak] {
+  display: none;
+}
+.hidden {
+  display: none !important;
 }
 
 /*FONTS*/
 @font-face {
-    font-family: NestleBrush;
-    src: url(NestleBrush.woff2);
-    display: swap;
+  font-family: NestleBrush;
+  src: url(NestleBrush.woff2);
+  display: swap;
 }
 
 @font-face {
-    font-family: NestleScript;
-    src: url(NestleScript.woff2);
-    display: swap;
+  font-family: NestleScript;
+  src: url(NestleScript.woff2);
+  display: swap;
 }
 
 @font-face {
-    font-family: NestleBold;
-    src: url(NestleBold.woff2);
-    display: swap;
+  font-family: NestleBold;
+  src: url(NestleBold.woff2);
+  display: swap;
 }
 
 @font-face {
-    font-family: Nestle;
-    src: url(Nestle.woff2);
-    display: swap;
+  font-family: Nestle;
+  src: url(Nestle.woff2);
+  display: swap;
 }
 
 /*UNIVERSAL*/
-header > img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
+header > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
 }
 
-header{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+header {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-
-header nav{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+header nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-header nav a{
-    font-family: 'NestleBold';
-    border: var(--blue) 2px solid;
-    background-color: var(--blue);
-    border-radius: 20px;
-    color: white;
-    transition-duration: 0.3s;
-    transition-delay: 0.08s;
-    padding: 5px 15px;
-    margin: 5px;
-    text-decoration: none;
+header nav a {
+  font-family: "NestleBold";
+  border: var(--blue) 2px solid;
+  background-color: var(--blue);
+  border-radius: 20px;
+  color: white;
+  transition-duration: 0.3s;
+  transition-delay: 0.08s;
+  padding: 5px 15px;
+  margin: 5px;
+  text-decoration: none;
 }
 
-header nav a:hover{
-    background-color: white;
-    color:var(--blue);
-    transition-duration: 0.3s;
-    transition-delay: 0.08s;
-    border: var(--blue) solid 2px;
+header nav a:hover {
+  background-color: white;
+  color: var(--blue);
+  transition-duration: 0.3s;
+  transition-delay: 0.08s;
+  border: var(--blue) solid 2px;
 }
 
-header h2{
-    font-family: 'NestleScript';
-    color: var(--green);
-    text-align: center;
+header h2 {
+  font-family: "NestleScript";
+  color: var(--green);
+  text-align: center;
 }
 
-header p#intro{
-    font-family: "NestleBold";
-    color: var(--brown);
-    text-align: justify;
+header p#intro {
+  font-family: "NestleBold";
+  color: var(--brown);
+  text-align: justify;
 }
 
-header p#intro a{
-    font-size: inherit;
-    color: var(--blue);
-    text-decoration: none;
-    font-family: inherit;
+header p#intro a {
+  font-size: inherit;
+  color: var(--blue);
+  text-decoration: none;
+  font-family: inherit;
 }
 
-.flipcard{
-    width: 100%;
-    position: relative;
+.flipcard {
+  width: 100%;
+  position: relative;
 }
 
-.flipcard .front{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
-    background-color: var(--pink);
-    -webkit-backface-visibility: hidden;
-    -webkit-perspective: 1000;
-    -webkit-font-smoothing: antialiased;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transform: translateZ(0); 
-    overflow: hidden;
+.flipcard .front {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+  background-color: var(--pink);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-font-smoothing: antialiased;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: translateZ(0);
+  overflow: hidden;
 }
 
 .flipcard > .front,
 .flipcard > .back {
-display: block;
-transition-timing-function: cubic-bezier(0.475, 0.885, 0.12, 1.275);
-transition-duration: 0.5s;
-transition-property: transform, opacity;
--webkit-transition-timing-function: cubic-bezier(0.475, 0.885, 0.12, 1.275);
--webkit-transition-duration: 0.5s;
--webkit-transition-property: transform, opacity;
+  display: block;
+  transition-timing-function: cubic-bezier(0.475, 0.885, 0.12, 1.275);
+  transition-duration: 0.5s;
+  transition-property: transform, opacity;
+  -webkit-transition-timing-function: cubic-bezier(0.475, 0.885, 0.12, 1.275);
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-property: transform, opacity;
 }
 
 .flipcard .back {
-    position: absolute;
-    opacity: 0;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    transform: rotateY(-180deg);
-    -webkit-transform: rotateY(-180deg);
-    background-color: var(--green);
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
-    -webkit-backface-visibility: hidden;
-    -webkit-perspective: 1000;
-    -webkit-font-smoothing: antialiased;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transform: translateZ(0); 
+  position: absolute;
+  opacity: 0;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  background-color: var(--green);
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-font-smoothing: antialiased;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: translateZ(0);
 }
 
-.flipcard .front h2{
-    text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.7);
-    text-transform: uppercase;
-    font-family: "NestleBrush";
-    color: white;
-    text-align: center;
-    font-weight: normal;
-    background-color: rgba(0,0,0,0.23);
+.flipcard .front h2 {
+  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  font-family: "NestleBrush";
+  color: white;
+  text-align: center;
+  font-weight: normal;
+  background-color: rgba(0, 0, 0, 0.23);
 }
 
-.flipcard .back h2{
-    text-transform: uppercase;
-    font-family: "NestleBold";
-    color: white;
-    text-align: center;
-    font-weight: normal;
+.flipcard .back h2 {
+  text-transform: uppercase;
+  font-family: "NestleBold";
+  color: white;
+  text-align: center;
+  font-weight: normal;
 }
 
-.flipcard .back h2:first-child{
-    margin-top: 2rem;
+.flipcard .back h2:first-child {
+  margin-top: 2rem;
 }
 
-.links{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+.links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.links a{
-    color: white;
-    border: 2px solid white;
-    font-family: 'Nestle';
-    text-decoration: none;
-    margin:4px;
-    padding:6px;
-    border-radius: 10px;
-    transition-duration: 0.3s;
-    transition-delay: 0.08s;
+.links a {
+  color: white;
+  border: 2px solid white;
+  font-family: "Nestle";
+  text-decoration: none;
+  margin: 4px;
+  padding: 6px;
+  border-radius: 10px;
+  transition-duration: 0.3s;
+  transition-delay: 0.08s;
 }
 
-.links a:hover{
-    color: var(--green);
-    background-color: white;
-    transition-duration: 0.3s;
-    transition-delay: 0.08s;
+.links a:hover {
+  color: var(--green);
+  background-color: white;
+  transition-duration: 0.3s;
+  transition-delay: 0.08s;
+}
+
+.flipcard button.more {
+  font-family: "NestleScript";
+  border: var(--blue) 3px solid;
+  background-color: var(--blue);
+  border-radius: 20px;
+  color: white;
+  transition-duration: 0.3s;
+  transition-delay: 0.08s;
+  padding: 5px 15px;
+  text-decoration: none;
+  margin: 3rem auto;
+  display: block;
+}
+
+.flipcard button.more:hover {
+  background-color: white;
+  color: var(--blue);
+  transition-duration: 0.3s;
+  transition-delay: 0.08s;
+  border: var(--blue) solid 3px;
 }
 
 /*FLIPING*/
 
-
 .flipcard > .front {
-    transform: rotateY(0deg);
-    -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
 }
 
-.flip >.back{
-    display: block;
-    opacity: 1;
-    transform: rotateY(0deg);
-    -webkit-transform: rotateY(0deg);
+.flip > .back {
+  display: block;
+  opacity: 1;
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
 }
 
-.flip > .front{
-    transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
+.flip > .front {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 /*Flipcard ID*/
-#general .front{
-    background-image: url('img/general.webp');
-    background-size: cover;
-    background-position: center;
+#general .front {
+  background-image: url("img/general.webp");
+  background-size: cover;
+  background-position: center;
 }
 
-#energy .front{
-    background-image: url('img/energy.webp');
-    background-size: cover;
-    background-position: center;
+#energy .front {
+  background-image: url("img/energy.webp");
+  background-size: cover;
+  background-position: center;
 }
 
-#technology .front{
-    background-image: url('img/technology.webp');
-    background-size: cover;
-    background-position: center;
+#technology .front {
+  background-image: url("img/technology.webp");
+  background-size: cover;
+  background-position: center;
 }
 
-#circular .front{
-    background-image: url('img/circular.webp');
-    background-size: cover;
-    background-position: center;
+#circular .front {
+  background-image: url("img/circular.webp");
+  background-size: cover;
+  background-position: center;
 }
 
-#foodwaste .front{
-    background-image: url('img/food-waste.webp');
-    background-size: cover;
-    background-position: center;
+#foodwaste .front {
+  background-image: url("img/food-waste.webp");
+  background-size: cover;
+  background-position: center;
 }
 
-#animals .front{
-    background-image: url('img/animals.webp');
-    background-size: cover;
-    background-position: center;
+#animals .front {
+  background-image: url("img/animals.webp");
+  background-size: cover;
+  background-position: center;
 }
 
-#agriculture .front{
-    background-image: url('img/agriculture.webp');
-    background-size: cover;
-    background-position: center;
+#agriculture .front {
+  background-image: url("img/agriculture.webp");
+  background-size: cover;
+  background-position: center;
 }
 
-#deforestation .front{
-    background-image: url('img/deforestation.webp');
-    background-size: cover;
-    background-position: center;
+#deforestation .front {
+  background-image: url("img/deforestation.webp");
+  background-size: cover;
+  background-position: center;
 }
 
-#business .front{
-    background-image: url('img/business.webp');
-    background-size: cover;
-    background-position: center;
+#business .front {
+  background-image: url("img/business.webp");
+  background-size: cover;
+  background-position: center;
 }
 
 .progress-wrap {
-    position: fixed;
-    right: 50px;
-    bottom: 50px;
-    height: 60px;
-    width: 60px;
-    cursor: pointer;
-    display: block;
-    border-radius: 60px;
-    box-shadow: inset  0 0 0 2px rgba(255,255,255,0.2);
-    z-index: 10000;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-  }
-  
-  .progress-wrap.active-progress {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .progress-wrap::after {
-    position: absolute;
-    content: url(img/angle-up-solid.svg);
-    text-align: center;
-    color: var(--brown);
-    left: 15px;
-    top: 5px;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-    display: block;
-    z-index: 1;
-    -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-  }
-  
-  .progress-wrap:hover::after {
-    opacity: 0;
-  }
-  
-  .progress-wrap::before {
-    position: absolute;
-    content: url(img/angle-up-solid-hover.svg);
-    text-align: center;
-    opacity: 0;
-    background-color: var(--blue);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    left: 15px;
-    top: 5px;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-    display: block;
-    z-index: 2;
-    -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-  }
-  
-  .progress-wrap:hover::before {
-    opacity: 1;
-  }
-  
-  .progress-wrap svg path { 
-    fill: none; 
-  }
-  
-  .progress-wrap svg.progress-circle path {
-    stroke: var(--blue);
-    stroke-width: 5;
-    box-sizing:border-box;
-    -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
-  }
-
-  .progress-wrap:hover svg.progress-circle path{
-    stroke: var(--green);
-    transition: stroke 0.2s linear;
-  }
-
-@media screen and (min-width: 1200px) and (max-width: 1599px){
-    .flipcard .back h2{
-        font-size: 2.3rem;
-    }
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  display: block;
+  border-radius: 60px;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
 }
 
-@media screen and (min-width: 1600px){
-    .flipcard .back h2{
-        font-size: 2.5rem;
-    }
+.progress-wrap.active-progress {
+  opacity: 1;
+  visibility: visible;
+}
+
+.progress-wrap::after {
+  position: absolute;
+  content: url(img/angle-up-solid.svg);
+  text-align: center;
+  color: var(--brown);
+  left: 15px;
+  top: 5px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  display: block;
+  z-index: 1;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.progress-wrap:hover::after {
+  opacity: 0;
+}
+
+.progress-wrap::before {
+  position: absolute;
+  content: url(img/angle-up-solid-hover.svg);
+  text-align: center;
+  opacity: 0;
+  background-color: var(--blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  left: 15px;
+  top: 5px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  display: block;
+  z-index: 2;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.progress-wrap:hover::before {
+  opacity: 1;
+}
+
+.progress-wrap svg path {
+  fill: none;
+}
+
+.progress-wrap svg.progress-circle path {
+  stroke: var(--blue);
+  stroke-width: 5;
+  box-sizing: border-box;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.progress-wrap:hover svg.progress-circle path {
+  stroke: var(--green);
+  transition: stroke 0.2s linear;
+}
+
+#moreOverlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  background-color: var(--green);
+  transition: 0.5s;
+  overflow-y: scroll;
+}
+
+.overlaycontent {
+  position: relative;
+  top: 5%;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+.overlaycontent h2 {
+  color: white;
+  font-family: "NestleBrush";
+  padding: 1rem;
+}
+
+.overlaycontent h3 {
+  color: white;
+  font-family: "NestleBrush";
+  padding: 1rem;
+}
+
+.closebtn {
+  color: white;
+  position: absolute;
+  top: 3%;
+  right: 8%;
+  font-size: 100px;
+  font-family: "NestleBrush";
+  z-index: 6;
+  transition: ease 0.3s color;
+  text-decoration: none;
+}
+
+.closebtn:hover {
+  color: var(--blue);
+  transition: ease 0.3s color;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  .flipcard .back h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .flipcard .back h2 {
+    font-size: 2.5rem;
+  }
 }
 
 /*DESKTOP*/
-@media screen and (min-width: 1200px){
-    header{
-        margin-top: 100px;
-    }
+@media screen and (min-width: 1200px) {
+  header {
+    margin-top: 100px;
+  }
 
-    header > img{
-        width: 30vw;
-    }
+  header > img {
+    width: 30vw;
+  }
 
-    header nav a{
-        font-size: 2.5rem;
-    }
+  header nav a {
+    font-size: 2.5rem;
+  }
 
-    header h2{
-        font-size: 5rem;
-    }
+  header h2 {
+    font-size: 5rem;
+  }
 
-    header p#intro{
-        font-size: 1.7rem;
-        margin: 3rem 150px;
-    }
+  header p#intro {
+    font-size: 1.7rem;
+    margin: 3rem 150px;
+  }
 
-    main{
-        width: 80%;
-        margin-top: 50px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 80px;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 700px;
-        row-gap: 50px;
-    }
+  main {
+    width: 80%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 700px;
+    row-gap: 50px;
+  }
 
-    main * {
-        -webkit-transform: translateZ(0);
-    }
+  main * {
+    -webkit-transform: translateZ(0);
+  }
 
-    .flipcard{
-        height: 700px;
-    }
+  .flipcard {
+    height: 700px;
+  }
 
-    .flipcard .front, .flipcard .back{
-        border-radius: 30px;
-    }
+  .flipcard .front,
+  .flipcard .back {
+    border-radius: 30px;
+  }
 
-    .flipcard .front h2{
-        font-size: 7rem;
-        padding-top: 300px;
-        padding-bottom: 268px;
-        border-radius: 30px;
-    }
+  .flipcard .front h2 {
+    font-size: 7rem;
+    padding-top: 300px;
+    padding-bottom: 268px;
+    border-radius: 30px;
+  }
 
-    .links{
-        margin: 0 50px 30px 50px;
-    }
+  .links {
+    margin: 0 50px 30px 50px;
+  }
 
-    .links a{
-        font-size: 1.5rem;
-    }
+  .links a {
+    font-size: 1.5rem;
+  }
 
-    #circular .front h2{
-        padding-bottom: 194px !important;
-        padding-top: 230px !important;
-    }
+  .flipcard button.more {
+    font-size: 2rem;
+  }
+
+  .overlaycontent h2 {
+    font-size: 5.2rem;
+  }
+  .overlaycontent h3 {
+    font-size: 3rem;
+  }
+
+  #circular .front h2 {
+    padding-bottom: 194px !important;
+    padding-top: 230px !important;
+  }
 }
 
 /*MOBILE*/
-@media screen and (max-width: 1199px){
-    header{
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
+@media screen and (max-width: 1199px) {
+  header {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
 
-    header > img{
-        width: 80vw;
-    }
+  header > img {
+    width: 80vw;
+  }
 
-    header nav a{
-        font-size: 1.4rem;
-    }
+  header nav a {
+    font-size: 1.4rem;
+  }
 
-    header h2{
-        font-size: 3rem;
-    }
+  header h2 {
+    font-size: 3rem;
+  }
 
-    header p#intro{
-        font-size: 1.3rem;;
-        margin: 2rem 1rem;
-    }
+  header p#intro {
+    font-size: 1.3rem;
+    margin: 2rem 1rem;
+  }
 
-    .flipcard{
-        height: 900px;
-        margin-bottom: 70px;
-        overflow: hidden;
-    }
+  .flipcard {
+    height: 900px;
+    margin-bottom: 70px;
+    overflow: hidden;
+  }
 
-    .flipcard .front h2{
-        font-size: 48px;
-        padding-top: 420px;
-        padding-bottom: 420px;
-        overflow: hidden;
-    }
+  .flipcard .front h2 {
+    font-size: 48px;
+    padding-top: 420px;
+    padding-bottom: 420px;
+    overflow: hidden;
+  }
 
-    #circular .front h2{
-        padding-bottom: 391px !important;
-        padding-top: 390px !important;
-        overflow: hidden;
-    }
+  #circular .front h2 {
+    padding-bottom: 391px !important;
+    padding-top: 390px !important;
+    overflow: hidden;
+  }
 
-    .flipcard .back h2{
-        font-size: 1.8rem;
-    }
+  .flipcard .back h2 {
+    font-size: 1.8rem;
+  }
 
-    .links{
-        margin: 0 15px 15px 15px;
-    }
+  .links {
+    margin: 0 15px 15px 15px;
+  }
 
-    .links a{
-        font-size: 1rem;
-    }
+  .links a {
+    font-size: 1rem;
+  }
 
-    .progress-wrap{
-        right: 20px;
-        bottom: 40px;
-    }
+  .overlaycontent h2 {
+    font-size: 4rem;
+  }
+  .overlaycontent h3 {
+    font-size: 2.5rem;
+  }
+
+  .progress-wrap {
+    right: 20px;
+    bottom: 40px;
+  }
 }
