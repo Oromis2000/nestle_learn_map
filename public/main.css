@@ -623,6 +623,10 @@ header p#intro a {
     font-size: 1.8rem;
   }
 
+  .flipcard button.more {
+    font-size: 1.8rem;
+  }
+
   .links {
     margin: 0 15px 15px 15px;
   }
